@@ -2,9 +2,6 @@ site_name: Engenharia de Dados SATC
 site_description: Documentacao do projeto <nome do projeto>
 site_author: Jorge Luiz da Silva
 site_url: https://jlsilva01.github.io/projeto-ed-satc
-site_favicon: images/favicon.png
-site_logo: images/logo.png
-site_keywords: Engenharia de Dados, Engenharia de Software, SATC, Python, Pyspark, Delta, Jupyter, Git, GitHub, Markdown, MkDocs, Material Theme
 
 repo_name: projeto-ed-satc
 repo_url: http://github.com/jlsilva01/projeto-ed-satc
@@ -37,15 +34,12 @@ theme:
     - search
   icon:
     repo: fontawesome/brands/github
-
-hide:
-  - search
-  - navigation
-  - toc
+  favicon: images/favicon.png
+  logo: images/logo.png
 
 extra:
   social:
-    - icon: fontawesome/brands/mastodon 
+    - icon: fontawesome/brands/mastodon
       link: https://jl2tech.com
   generator: false
 
@@ -62,7 +56,7 @@ plugins:
   - mkdocstrings:
       default_handler: python
 
-markdown_extensions: 
+markdown_extensions:
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
