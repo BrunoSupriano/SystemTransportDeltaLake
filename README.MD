@@ -151,7 +151,7 @@ Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 - **João Pedro Cardoso** - *Transformação de dados com Apache Spark* - [Perfil GitHub](https://github.com/jpdarabas)
 - **Diego Hahn** - *Orquestração das tarefas* - [Perfil GitHub](https://github.com/DiegoHahn)
 - **Jhayne Henemam** - *Desenvolvimento do dashboard* - [Perfil GitHub](https://github.com/JhayneK)
-- **Keniel  Alves** - *GitHub e documentação* - [Perfil GitHub](https://github.com/KenielDev)
+- **Keniel  Alves** - *GitHub e documentação* - [Perfil GitHub](https://github.com/kenielnunes)
 
 Você também pode ver a lista de todos os [colaboradores](https://github.com/BrunoSupriano/SystemTransportDeltaLake/Colaborators) que participaram deste projeto.
 
