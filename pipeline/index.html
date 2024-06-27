@@ -1,0 +1,958 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentacao do projeto <nome do projeto>">
+      
+      
+        <meta name="author" content="Jorge Luiz da Silva">
+      
+      
+        <link rel="canonical" href="https://jlsilva01.github.io/projeto-ed-satc/pipeline/">
+      
+      
+        <link rel="prev" href="../sobre/">
+      
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Pipeline de Dados - Engenharia de Dados SATC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pipeline-de-dados" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Engenharia de Dados SATC" class="md-header__button md-logo" aria-label="Engenharia de Dados SATC" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engenharia de Dados SATC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pipeline de Dados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="http://github.com/jlsilva01/projeto-ed-satc" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    projeto-ed-satc
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sobre/" class="md-tabs__link">
+        
+  
+    
+  
+  Sobre
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Pipeline de Dados
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Engenharia de Dados SATC" class="md-nav__button md-logo" aria-label="Engenharia de Dados SATC" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Engenharia de Dados SATC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="http://github.com/jlsilva01/projeto-ed-satc" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    projeto-ed-satc
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sobre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pipeline de Dados
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline de Dados
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-da-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura da Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura da Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conectando-azure-adls-gen2-no-databricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conectando Azure ADLS Gen2 no Databricks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conectando Azure ADLS Gen2 no Databricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definindo-storage-account-e-sas-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definindo storage account e sas key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definindo-uma-funcao-para-montar-um-adls-com-um-ponto-de-montagem-com-adls-sas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definindo uma função para montar um ADLS com um ponto de montagem com ADLS SAS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montando-todos-os-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Montando todos os containers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrando-os-pontos-de-montagem-no-cluster-databricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrando os pontos de montagem no cluster Databricks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformacoes-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformações de dados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformações de dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrando-todos-os-arquivos-da-camada-landing-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrando todos os arquivos da camada landing-zone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerando-um-dataframe-para-cada-arquivo-a-partir-dos-arquivos-csv-gravado-no-container-landing-zone-do-azure-data-lake-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerando um dataframe para cada arquivo a partir dos arquivos CSV gravado no container landing-zone do Azure Data Lake Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionando-metadados-de-data-e-hora-de-processamento-e-nome-do-arquivo-de-origem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionando metadados de data e hora de processamento e nome do arquivo de origem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salvando-os-dataframes-em-delta-lake-formato-de-arquivo-no-data-lake-repositorio-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salvando os dataframes em delta lake (formato de arquivo) no data lake (repositorio cloud)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificando-os-dados-gravados-em-delta-na-camada-bronze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificando os dados gravados em delta na camada bronze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lendo-um-exemplo-de-um-delta-lake-para-validar-a-existencia-dos-dados-e-das-colunas-do-metadados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lendo um exemplo de um delta lake para validar a existencia dos dados e das colunas do metadados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camada-bronze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camada Bronze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camada-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camada Silver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-da-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura da Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura da Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conectando-azure-adls-gen2-no-databricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conectando Azure ADLS Gen2 no Databricks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conectando Azure ADLS Gen2 no Databricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definindo-storage-account-e-sas-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definindo storage account e sas key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definindo-uma-funcao-para-montar-um-adls-com-um-ponto-de-montagem-com-adls-sas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definindo uma função para montar um ADLS com um ponto de montagem com ADLS SAS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montando-todos-os-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Montando todos os containers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrando-os-pontos-de-montagem-no-cluster-databricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrando os pontos de montagem no cluster Databricks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformacoes-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformações de dados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformações de dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrando-todos-os-arquivos-da-camada-landing-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrando todos os arquivos da camada landing-zone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerando-um-dataframe-para-cada-arquivo-a-partir-dos-arquivos-csv-gravado-no-container-landing-zone-do-azure-data-lake-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerando um dataframe para cada arquivo a partir dos arquivos CSV gravado no container landing-zone do Azure Data Lake Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionando-metadados-de-data-e-hora-de-processamento-e-nome-do-arquivo-de-origem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionando metadados de data e hora de processamento e nome do arquivo de origem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salvando-os-dataframes-em-delta-lake-formato-de-arquivo-no-data-lake-repositorio-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salvando os dataframes em delta lake (formato de arquivo) no data lake (repositorio cloud)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificando-os-dados-gravados-em-delta-na-camada-bronze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificando os dados gravados em delta na camada bronze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lendo-um-exemplo-de-um-delta-lake-para-validar-a-existencia-dos-dados-e-das-colunas-do-metadados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lendo um exemplo de um delta lake para validar a existencia dos dados e das colunas do metadados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camada-bronze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camada Bronze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camada-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camada Silver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="pipeline-de-dados">Pipeline de Dados</h1>
+<p><img alt="Pipeline de dados" src="../assets/pipeline.png" /></p>
+<h2 id="introducao">Introdução</h2>
+<p>Nesta página, vamos explorar a pipeline de dados desenvolvida para a transportadora, abordando como foi estruturada e as etapas envolvidas desde a coleta até a entrega de dados prontos para análise.</p>
+<h2 id="estrutura-da-pipeline">Estrutura da Pipeline</h2>
+<p>A pipeline de dados foi organizada em três camadas principais: Bronze, Silver e Gold. Cada camada desempenha um papel específico na preparação e transformação dos dados.</p>
+<h3 id="conectando-azure-adls-gen2-no-databricks">Conectando Azure ADLS Gen2 no Databricks</h3>
+<h4 id="definindo-storage-account-e-sas-key">Definindo storage account e sas key</h4>
+<div class="highlight"><pre><span></span><code><span class="n">storageAccountName</span> <span class="o">=</span> <span class="s2">&quot;datalake7a68c04c876ba15d&quot;</span>
+<span class="n">sasToken</span> <span class="o">=</span> <span class="n">dbutils</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;sas-token&quot;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;sas-tkn&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="definindo-uma-funcao-para-montar-um-adls-com-um-ponto-de-montagem-com-adls-sas">Definindo uma função para montar um ADLS com um ponto de montagem com ADLS SAS</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">mount_adls</span><span class="p">(</span><span class="n">blobContainerName</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">dbutils</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;wasbs://</span><span class="si">{}</span><span class="s2">@</span><span class="si">{}</span><span class="s2">.blob.core.windows.net&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">blobContainerName</span><span class="p">,</span> <span class="n">storageAccountName</span><span class="p">),</span>
+        <span class="n">mount_point</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">blobContainerName</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">extra_configs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fs.azure.sas.&#39;</span> <span class="o">+</span> <span class="n">blobContainerName</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">storageAccountName</span> <span class="o">+</span> <span class="s1">&#39;.blob.core.windows.net&#39;</span><span class="p">:</span> <span class="n">sasToken</span><span class="p">}</span>
+      <span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OK!&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Falha&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="montando-todos-os-containers">Montando todos os containers</h4>
+<div class="highlight"><pre><span></span><code><span class="n">mount_adls</span><span class="p">(</span><span class="s1">&#39;landing-zone&#39;</span><span class="p">)</span>
+<span class="n">mount_adls</span><span class="p">(</span><span class="s1">&#39;bronze&#39;</span><span class="p">)</span>
+<span class="n">mount_adls</span><span class="p">(</span><span class="s1">&#39;silver&#39;</span><span class="p">)</span>
+<span class="n">mount_adls</span><span class="p">(</span><span class="s1">&#39;gold&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="mostrando-os-pontos-de-montagem-no-cluster-databricks">Mostrando os pontos de montagem no cluster Databricks</h4>
+<div class="highlight"><pre><span></span><code><span class="n">display</span><span class="p">(</span><span class="n">dbutils</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">mounts</span><span class="p">())</span>
+</code></pre></div>
+<h3 id="transformacoes-de-dados">Transformações de dados</h3>
+<h4 id="mostrando-todos-os-arquivos-da-camada-landing-zone">Mostrando todos os arquivos da camada landing-zone</h4>
+<div class="highlight"><pre><span></span><code><span class="n">display</span><span class="p">(</span><span class="n">dbutils</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="gerando-um-dataframe-para-cada-arquivo-a-partir-dos-arquivos-csv-gravado-no-container-landing-zone-do-azure-data-lake-storage">Gerando um dataframe para cada arquivo a partir dos arquivos CSV gravado no container landing-zone do Azure Data Lake Storage</h4>
+<div class="highlight"><pre><span></span><code><span class="n">df_agendamentos</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Agendamentos.csv&quot;</span><span class="p">)</span>
+<span class="n">df_cargas</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Cargas.csv&quot;</span><span class="p">)</span>
+<span class="n">df_clientes</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Clientes.csv&quot;</span><span class="p">)</span>
+<span class="n">df_motoristas</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Motoristas.csv&quot;</span><span class="p">)</span> 
+<span class="n">df_rotas</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Rotas.csv&quot;</span><span class="p">)</span>
+<span class="n">df_veiculos</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Veiculos.csv&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="adicionando-metadados-de-data-e-hora-de-processamento-e-nome-do-arquivo-de-origem">Adicionando metadados de data e hora de processamento e nome do arquivo de origem</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">current_timestamp</span><span class="p">,</span> <span class="n">lit</span>
+
+<span class="n">df_agendamentos</span> <span class="o">=</span> <span class="n">df_agendamentos</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Agendamentos.csv&quot;</span><span class="p">))</span>
+<span class="n">df_cargas</span> <span class="o">=</span> <span class="n">df_cargas</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Cargas.csv&quot;</span><span class="p">))</span>
+<span class="n">df_clientes</span> <span class="o">=</span> <span class="n">df_clientes</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Clientes.csv&quot;</span><span class="p">))</span>
+<span class="n">df_motoristas</span> <span class="o">=</span> <span class="n">df_motoristas</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Motoristas.csv&quot;</span><span class="p">))</span>
+<span class="n">df_rotas</span> <span class="o">=</span> <span class="n">df_rotas</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Rotas.csv&quot;</span><span class="p">))</span>
+<span class="n">df_veiculos</span> <span class="o">=</span> <span class="n">df_veiculos</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Veiculos.csv&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="salvando-os-dataframes-em-delta-lake-formato-de-arquivo-no-data-lake-repositorio-cloud">Salvando os dataframes em delta lake (formato de arquivo) no data lake (repositorio cloud)</h4>
+<div class="highlight"><pre><span></span><code><span class="n">df_agendamentos</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/agendamentos&quot;</span><span class="p">)</span>
+<span class="n">df_cargas</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/cargas&quot;</span><span class="p">)</span>
+<span class="n">df_clientes</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/clientes&quot;</span><span class="p">)</span>
+<span class="n">df_motoristas</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/motoristas&quot;</span><span class="p">)</span>
+<span class="n">df_rotas</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/rotas&quot;</span><span class="p">)</span>
+<span class="n">df_veiculos</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/veiculos&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="verificando-os-dados-gravados-em-delta-na-camada-bronze">Verificando os dados gravados em delta na camada bronze</h4>
+<div class="highlight"><pre><span></span><code><span class="n">display</span><span class="p">(</span><span class="n">dbutils</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="lendo-um-exemplo-de-um-delta-lake-para-validar-a-existencia-dos-dados-e-das-colunas-do-metadados">Lendo um exemplo de um delta lake para validar a existencia dos dados e das colunas do metadados</h4>
+<div class="highlight"><pre><span></span><code><span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s1">/bronze/veiculos&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="camada-bronze">Camada Bronze</h3>
+<p>Na camada Bronze, os dados brutos são coletados e armazenados. Isso inclui informações diretamente obtidas das tabelas principais. A integridade e a fidelidade dos dados são preservadas nesta etapa inicial.</p>
+<h3 id="camada-silver">Camada Silver</h3>
+<p>A camada Silver é responsável pela limpeza e transformação inicial dos dados brutos da camada Bronze. Aqui, aplicamos filtros, validações e ajustes para garantir que os dados estejam estruturados de maneira consistente e prontos para análises mais complexas. Utilizamos PySpark para processar e manipular os dados nesta etapa.</p>
+<p>Exemplo de código em PySpark para transformação na camada Silver:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Exemplo de código PySpark para transformação na camada Silver</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">col</span><span class="p">,</span> <span class="n">when</span>
+
+<span class="c1"># Inicialização da sessão Spark</span>
+<span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;PipelineSilver&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+
+<span class="c1"># Carregamento dos dados da camada Bronze</span>
+<span class="n">bronze_data</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;caminho/para/bronze_data/*.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Aplicação de transformações</span>
+<span class="n">silver_data</span> <span class="o">=</span> <span class="n">bronze_data</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nova_coluna&quot;</span><span class="p">,</span> <span class="n">when</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;condição&quot;</span><span class="p">),</span> <span class="s2">&quot;valor_true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">otherwise</span><span class="p">(</span><span class="s2">&quot;valor_false&quot;</span><span class="p">))</span>
+
+<span class="c1"># Salvar dados transformados na camada Silver</span>
+<span class="n">silver_data</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;caminho/para/silver_data&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../sobre/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Sobre">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Sobre
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - <a href="#" target="_blank"><b>Jorge Luiz da Silva</b></a> - Todos os direitos reservados.
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://jl2tech.com" target="_blank" rel="noopener me" title="jl2tech.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "navigation.next-prev", "search"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
