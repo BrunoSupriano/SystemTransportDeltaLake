@@ -44,6 +44,16 @@ cd SystemTransportDeltaLake
 python3 -m venv env
 source env\Scripts\activate # No linux use `source env/bin/activate` 
 pip install -r requirements.txt
+//// ou se usar poetry
+poetry install
+```
+
+### Rodando o mkdocs
+
+```bash
+poetry add mkdocs mkdocs-material mkdocs-material-extensions
+
+mkdocs serve
 ```
 
 ### Configurando o Docker
