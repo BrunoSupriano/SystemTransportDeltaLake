@@ -12,13 +12,13 @@
         <meta name="author" content="Jorge Luiz da Silva">
       
       
-        <link rel="canonical" href="https://brunosupriano.github.io/SystemTransportDeltaLake/pipeline/">
+        <link rel="canonical" href="https://brunosupriano.github.io/SystemTransportDeltaLake/pipeline_bronze/">
       
       
-        <link rel="prev" href="../about_pipeline/">
+        <link rel="prev" href="../pipeline/">
       
       
-        <link rel="next" href="../pipeline_bronze/">
+        <link rel="next" href="../pipeline_silver/">
       
       
       <link rel="icon" href="../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Arquitetura - Engenharia de Dados SATC</title>
+        <title>Bronze - Engenharia de Dados SATC</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arquitetura" class="md-skip">
+        <a href="#camada-bronze" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Arquitetura
+              Bronze
             
           </span>
         </div>
@@ -425,6 +425,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitetura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -441,7 +462,7 @@
           
   
   <span class="md-ellipsis">
-    Arquitetura
+    Bronze
   </span>
   
 
@@ -452,7 +473,7 @@
         
   
   <span class="md-ellipsis">
-    Arquitetura
+    Bronze
   </span>
   
 
@@ -474,68 +495,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estrutura-da-pipeline" class="md-nav__link">
+  <a href="#mostrando-todos-os-arquivos-da-camada-landing-zone" class="md-nav__link">
     <span class="md-ellipsis">
-      Estrutura da Pipeline
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Estrutura da Pipeline">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conectando-azure-adls-gen2-no-databricks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conectando Azure ADLS Gen2 no Databricks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Conectando Azure ADLS Gen2 no Databricks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definindo-storage-account-e-sas-key" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definindo storage account e sas key
+      Mostrando todos os arquivos da camada landing-zone
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#definindo-uma-funcao-para-montar-um-adls-com-um-ponto-de-montagem-com-adls-sas" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#gerando-um-dataframe-para-cada-arquivo-a-partir-dos-arquivos-csv-gravado-no-container-landing-zone-do-azure-data-lake-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Definindo uma função para montar um ADLS com um ponto de montagem com ADLS SAS
+      Gerando um dataframe para cada arquivo a partir dos arquivos CSV gravado no container landing-zone do Azure Data Lake Storage
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#montando-todos-os-containers" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#adicionando-metadados-de-data-e-hora-de-processamento-e-nome-do-arquivo-de-origem" class="md-nav__link">
     <span class="md-ellipsis">
-      Montando todos os containers
+      Adicionando metadados de data e hora de processamento e nome do arquivo de origem
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#mostrando-os-pontos-de-montagem-no-cluster-databricks" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#salvando-os-dataframes-em-delta-lake-formato-de-arquivo-no-data-lake-repositorio-cloud" class="md-nav__link">
     <span class="md-ellipsis">
-      Mostrando os pontos de montagem no cluster Databricks
+      Salvando os dataframes em delta lake (formato de arquivo) no data lake (repositorio cloud)
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#verificando-os-dados-gravados-em-delta-na-camada-bronze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificando os dados gravados em delta na camada bronze
+    </span>
+  </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#lendo-um-exemplo-de-um-delta-lake-para-validar-a-existencia-dos-dados-e-das-colunas-do-metadados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lendo um exemplo de um delta lake para validar a existencia dos dados e das colunas do metadados
+    </span>
+  </a>
   
 </li>
       
@@ -543,27 +552,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pipeline_bronze/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Bronze
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -645,68 +633,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estrutura-da-pipeline" class="md-nav__link">
+  <a href="#mostrando-todos-os-arquivos-da-camada-landing-zone" class="md-nav__link">
     <span class="md-ellipsis">
-      Estrutura da Pipeline
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Estrutura da Pipeline">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conectando-azure-adls-gen2-no-databricks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conectando Azure ADLS Gen2 no Databricks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Conectando Azure ADLS Gen2 no Databricks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definindo-storage-account-e-sas-key" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definindo storage account e sas key
+      Mostrando todos os arquivos da camada landing-zone
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#definindo-uma-funcao-para-montar-um-adls-com-um-ponto-de-montagem-com-adls-sas" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#gerando-um-dataframe-para-cada-arquivo-a-partir-dos-arquivos-csv-gravado-no-container-landing-zone-do-azure-data-lake-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Definindo uma função para montar um ADLS com um ponto de montagem com ADLS SAS
+      Gerando um dataframe para cada arquivo a partir dos arquivos CSV gravado no container landing-zone do Azure Data Lake Storage
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#montando-todos-os-containers" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#adicionando-metadados-de-data-e-hora-de-processamento-e-nome-do-arquivo-de-origem" class="md-nav__link">
     <span class="md-ellipsis">
-      Montando todos os containers
+      Adicionando metadados de data e hora de processamento e nome do arquivo de origem
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#mostrando-os-pontos-de-montagem-no-cluster-databricks" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#salvando-os-dataframes-em-delta-lake-formato-de-arquivo-no-data-lake-repositorio-cloud" class="md-nav__link">
     <span class="md-ellipsis">
-      Mostrando os pontos de montagem no cluster Databricks
+      Salvando os dataframes em delta lake (formato de arquivo) no data lake (repositorio cloud)
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#verificando-os-dados-gravados-em-delta-na-camada-bronze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificando os dados gravados em delta na camada bronze
+    </span>
+  </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#lendo-um-exemplo-de-um-delta-lake-para-validar-a-existencia-dos-dados-e-das-colunas-do-metadados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lendo um exemplo de um delta lake para validar a existencia dos dados e das colunas do metadados
+    </span>
+  </a>
   
 </li>
       
@@ -728,35 +704,42 @@
   
 
 
-<h1 id="arquitetura">Arquitetura</h1>
-<p><img alt="Pipeline de dados" src="../assets/pipeline.png" /></p>
-<h2 id="estrutura-da-pipeline">Estrutura da Pipeline</h2>
-<p>A pipeline de dados foi organizada em três camadas principais: Bronze, Silver e Gold. Cada camada desempenha um papel específico na preparação e transformação dos dados.</p>
-<h3 id="conectando-azure-adls-gen2-no-databricks">Conectando Azure ADLS Gen2 no Databricks</h3>
-<h4 id="definindo-storage-account-e-sas-key">Definindo storage account e sas key</h4>
-<div class="highlight"><pre><span></span><code><span class="n">storageAccountName</span> <span class="o">=</span> <span class="s2">&quot;sua_storage_account&quot;</span>
-<span class="n">sasToken</span> <span class="o">=</span> <span class="n">dbutils</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;sas-token&quot;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;sas-token&quot;</span><span class="p">)</span>
+<h1 id="camada-bronze">Camada Bronze</h1>
+<p>Na camada Bronze, os dados brutos são coletados e armazenados. Isso inclui informações diretamente obtidas das tabelas principais. A integridade e a fidelidade dos dados são preservadas nesta etapa inicial.</p>
+<h3 id="mostrando-todos-os-arquivos-da-camada-landing-zone">Mostrando todos os arquivos da camada landing-zone</h3>
+<div class="highlight"><pre><span></span><code><span class="n">display</span><span class="p">(</span><span class="n">dbutils</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone&quot;</span><span class="p">))</span>
 </code></pre></div>
-<h4 id="definindo-uma-funcao-para-montar-um-adls-com-um-ponto-de-montagem-com-adls-sas">Definindo uma função para montar um ADLS com um ponto de montagem com ADLS SAS</h4>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">mount_adls</span><span class="p">(</span><span class="n">blobContainerName</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-      <span class="n">dbutils</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span>
-        <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;wasbs://</span><span class="si">{}</span><span class="s2">@</span><span class="si">{}</span><span class="s2">.blob.core.windows.net&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">blobContainerName</span><span class="p">,</span> <span class="n">storageAccountName</span><span class="p">),</span>
-        <span class="n">mount_point</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">blobContainerName</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="n">extra_configs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fs.azure.sas.&#39;</span> <span class="o">+</span> <span class="n">blobContainerName</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">storageAccountName</span> <span class="o">+</span> <span class="s1">&#39;.blob.core.windows.net&#39;</span><span class="p">:</span> <span class="n">sasToken</span><span class="p">}</span>
-      <span class="p">)</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OK!&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Falha&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<h3 id="gerando-um-dataframe-para-cada-arquivo-a-partir-dos-arquivos-csv-gravado-no-container-landing-zone-do-azure-data-lake-storage">Gerando um dataframe para cada arquivo a partir dos arquivos CSV gravado no container landing-zone do Azure Data Lake Storage</h3>
+<div class="highlight"><pre><span></span><code><span class="n">df_agendamentos</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Agendamentos.csv&quot;</span><span class="p">)</span>
+<span class="n">df_cargas</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Cargas.csv&quot;</span><span class="p">)</span>
+<span class="n">df_clientes</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Clientes.csv&quot;</span><span class="p">)</span>
+<span class="n">df_motoristas</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Motoristas.csv&quot;</span><span class="p">)</span> 
+<span class="n">df_rotas</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Rotas.csv&quot;</span><span class="p">)</span>
+<span class="n">df_veiculos</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;infeschema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/landing-zone/Veiculos.csv&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h4 id="montando-todos-os-containers">Montando todos os containers</h4>
-<div class="highlight"><pre><span></span><code><span class="n">mount_adls</span><span class="p">(</span><span class="s1">&#39;landing-zone&#39;</span><span class="p">)</span>
-<span class="n">mount_adls</span><span class="p">(</span><span class="s1">&#39;bronze&#39;</span><span class="p">)</span>
-<span class="n">mount_adls</span><span class="p">(</span><span class="s1">&#39;silver&#39;</span><span class="p">)</span>
-<span class="n">mount_adls</span><span class="p">(</span><span class="s1">&#39;gold&#39;</span><span class="p">)</span>
+<h3 id="adicionando-metadados-de-data-e-hora-de-processamento-e-nome-do-arquivo-de-origem">Adicionando metadados de data e hora de processamento e nome do arquivo de origem</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">current_timestamp</span><span class="p">,</span> <span class="n">lit</span>
+
+<span class="n">df_agendamentos</span> <span class="o">=</span> <span class="n">df_agendamentos</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Agendamentos.csv&quot;</span><span class="p">))</span>
+<span class="n">df_cargas</span> <span class="o">=</span> <span class="n">df_cargas</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Cargas.csv&quot;</span><span class="p">))</span>
+<span class="n">df_clientes</span> <span class="o">=</span> <span class="n">df_clientes</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Clientes.csv&quot;</span><span class="p">))</span>
+<span class="n">df_motoristas</span> <span class="o">=</span> <span class="n">df_motoristas</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Motoristas.csv&quot;</span><span class="p">))</span>
+<span class="n">df_rotas</span> <span class="o">=</span> <span class="n">df_rotas</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Rotas.csv&quot;</span><span class="p">))</span>
+<span class="n">df_veiculos</span> <span class="o">=</span> <span class="n">df_veiculos</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;data_hora_bronze&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;nome_arquivo&quot;</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">&quot;Veiculos.csv&quot;</span><span class="p">))</span>
 </code></pre></div>
-<h4 id="mostrando-os-pontos-de-montagem-no-cluster-databricks">Mostrando os pontos de montagem no cluster Databricks</h4>
-<div class="highlight"><pre><span></span><code><span class="n">display</span><span class="p">(</span><span class="n">dbutils</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">mounts</span><span class="p">())</span>
+<h3 id="salvando-os-dataframes-em-delta-lake-formato-de-arquivo-no-data-lake-repositorio-cloud">Salvando os dataframes em delta lake (formato de arquivo) no data lake (repositorio cloud)</h3>
+<div class="highlight"><pre><span></span><code><span class="n">df_agendamentos</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/agendamentos&quot;</span><span class="p">)</span>
+<span class="n">df_cargas</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/cargas&quot;</span><span class="p">)</span>
+<span class="n">df_clientes</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/clientes&quot;</span><span class="p">)</span>
+<span class="n">df_motoristas</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/motoristas&quot;</span><span class="p">)</span>
+<span class="n">df_rotas</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/rotas&quot;</span><span class="p">)</span>
+<span class="n">df_veiculos</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/veiculos&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="verificando-os-dados-gravados-em-delta-na-camada-bronze">Verificando os dados gravados em delta na camada bronze</h3>
+<div class="highlight"><pre><span></span><code><span class="n">display</span><span class="p">(</span><span class="n">dbutils</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s2">/bronze/&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="lendo-um-exemplo-de-um-delta-lake-para-validar-a-existencia-dos-dados-e-das-colunas-do-metadados">Lendo um exemplo de um delta lake para validar a existencia dos dados e das colunas do metadados</h3>
+<div class="highlight"><pre><span></span><code><span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/mnt/</span><span class="si">{</span><span class="n">storageAccountName</span><span class="si">}</span><span class="s1">/bronze/veiculos&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </code></pre></div>
 
 
@@ -793,7 +776,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../about_pipeline/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Oque é?">
+          <a href="../pipeline/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Arquitetura">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -803,20 +786,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Oque é?
+                Arquitetura
               </div>
             </div>
           </a>
         
         
           
-          <a href="../pipeline_bronze/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Bronze">
+          <a href="../pipeline_silver/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Silver">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Bronze
+                Silver
               </div>
             </div>
             <div class="md-footer__button md-icon">

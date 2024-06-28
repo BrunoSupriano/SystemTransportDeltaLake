@@ -1,0 +1,4 @@
+.md-header-nav__title img {
+  height: 60px; /* Ajuste este valor conforme necessário */
+  width: auto; /* Mantém a proporção da imagem */
+}
