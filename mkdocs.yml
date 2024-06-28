@@ -1,4 +1,4 @@
-site_name: Engenharia de Dados SATC
+site_name: System Transport Delta Lake Eng.Dados UniSatc
 site_description: Documentacao do projeto SystemTransportDeltaLake
 site_author: Jorge Luiz da Silva
 site_url: https://brunosupriano.github.io/SystemTransportDeltaLake/
@@ -29,7 +29,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default 
       primary: black
-      accent: yellow
+      accent: blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
