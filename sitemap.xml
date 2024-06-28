@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://brunosupriano.github.io/SystemTransportDeltaLake/equipe/</loc>
+         <lastmod>2024-06-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://brunosupriano.github.io/SystemTransportDeltaLake/pipeline/</loc>
          <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
@@ -27,11 +32,6 @@
     </url>
     <url>
          <loc>https://brunosupriano.github.io/SystemTransportDeltaLake/pipeline_silver/</loc>
-         <lastmod>2024-06-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://brunosupriano.github.io/SystemTransportDeltaLake/sobre/</loc>
          <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
