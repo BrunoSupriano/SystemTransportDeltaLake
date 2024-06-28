@@ -44,7 +44,6 @@ cd SystemTransportDeltaLake
 python3 -m venv env
 source env\Scripts\activate # No linux use `source env/bin/activate` 
 pip install -r requirements.txt
-//// ou se usar poetry
 poetry install
 ```
 
@@ -119,7 +118,7 @@ Gerador de sites estáticos que converte arquivos markdown em uma documentação
 
 ## Colaboração
 
-Por favor, leia o [COLABORACAO](https://gist.github.com/usuario/colaboracao.md) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
+<!-- Por favor, leia o [COLABORACAO](https://gist.github.com/usuario/colaboracao.md) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação. -->
 
 Se desejar publicar suas modificações em um repositório remoto no GitHub, siga estes passos:
 
@@ -151,7 +150,7 @@ Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 - **João Pedro Cardoso** - *Transformação de dados com Apache Spark* - [Perfil GitHub](https://github.com/jpdarabas)
 - **Diego Hahn** - *Orquestração das tarefas* - [Perfil GitHub](https://github.com/DiegoHahn)
 - **Jhayne Henemam** - *Desenvolvimento do dashboard* - [Perfil GitHub](https://github.com/JhayneK)
-- **Keniel  Alves** - *GitHub e documentação* - [Perfil GitHub](https://github.com/KenielDev)
+- **Keniel  Alves** - *GitHub e documentação* - [Perfil GitHub](https://github.com/kenielnunes)
 
 Você também pode ver a lista de todos os [colaboradores](https://github.com/BrunoSupriano/SystemTransportDeltaLake/Colaborators) que participaram deste projeto.
 

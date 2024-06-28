@@ -1,26 +1,51 @@
-site_name: Engenharia de Dados SATC
-site_description: Documentacao do projeto <nome do projeto>
+site_name: System Transport Delta Lake Eng.Dados UniSatc
+site_description: Documentacao do projeto SystemTransportDeltaLake
 site_author: Jorge Luiz da Silva
-site_url: https://jlsilva01.github.io/projeto-ed-satc
+site_url: https://brunosupriano.github.io/SystemTransportDeltaLake/
+site_keywords: Engenharia de Dados, Engenharia de Software, SATC, Python, Pyspark, Delta, Jupyter, Git, GitHub, Markdown, MkDocs, Material Theme
 
-repo_name: projeto-ed-satc
-repo_url: http://github.com/jlsilva01/projeto-ed-satc
+repo_name: SystemTransportDeltaLake
+repo_url: https://github.com/BrunoSupriano/SystemTransportDeltaLake
 edit_uri: edit/master/docs/
 
 docs_dir: docs
 
 nav:
   - Home: index.md
-  - Sobre: sobre.md
+  - Equipe: equipe.md
+  - Como começar: initial_commands.md
+  - Pipeline de Dados:
+      - Oque é?: about_pipeline.md
+      - Arquitetura: pipeline.md
+      - Bronze: pipeline_bronze.md
+      - Silver: pipeline_silver.md
+      - Gold: pipeline_gold.md
+  - Conclusão: conclusion.md
 
 theme:
   name: material
   palette:
-    primary: blue
-    accent: light-blue
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: yellow
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
   language: pt
   features:
     - navigation.footer
+    - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
@@ -35,7 +60,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
   favicon: images/favicon.png
-  logo: images/logo.png
+  logo: assets/logo-1.jpg
 
 extra:
   social:
@@ -43,7 +68,7 @@ extra:
       link: https://jl2tech.com
   generator: false
 
-copyright: Copyright &copy; 2024 - <a href="#" target="_blank"><b>Jorge Luiz da Silva</b></a> - Todos os direitos reservados.
+copyright: Copyright &copy; 2024 - <a href="#" target="_blank"><b>SystemTransportDeltaLake</b></a> - Todos os direitos reservados.
 
 extra_css:
   - stylesheets/extra.css

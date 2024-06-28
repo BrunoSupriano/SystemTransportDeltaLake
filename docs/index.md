@@ -4,71 +4,42 @@ hide:
   #- toc # table of contents - menu da direita
 ---
 
-# Projeto Engenharia de Dados
-
-![Logo](images/logo.png)
+# Projeto Sistema de Transportadora
 
 ## Introdução
 
-Trabalho desenvolvido para a disciplina de Engenharia de Dados do Curso de Engenharia da Software da UNISATC. A proposta do projeto é desenvolver uma pipeline de engenharia de dados utilizando ferramentas e tecnologias modernas como Python, Pyspark, Delta Lake, e Jupyter Notebooks.
+Este projeto foi desenvolvido para criar um sistema de gestão inteligente para uma transportadora. Utilizando técnicas avançadas de Engenharia de Dados, buscamos otimizar operações logísticas, melhorar a eficiência das entregas e gerenciar processos internos de maneira mais eficaz. 
 
 ## Objetivo
 
-O objetivo principal deste projeto é aplicar os conhecimentos adquiridos na disciplina para resolver problemas reais de engenharia de dados, incluindo a coleta, transformação, e análise de grandes volumes de dados.
-
-## Equipe
-
-Este projeto foi desenvolvido pela equipe formada por:
-
-- **Keniel**
-- **Bruno**
-- **Renato**
-- **Diego**
-
-## Principais Comandos do MkDocs
-
-Aqui estão alguns dos principais comandos utilizados no desenvolvimento e manutenção da documentação:
-
-- `mkdocs new [dir-name]` - Cria um novo projeto.
-- `mkdocs serve` - Inicia o preview das páginas \*.md da pasta /docs.
-- `mkdocs build` - Cria a estrutura de páginas web no padrão HTML, CSS, JS.
-- `mkdocs gh-deploy` - Publica as páginas criadas pelo 'mkdocs build' na estrutura do GitHub Pages.
-
-## Documentação para Referência e Estudo
-
-Para mais informações e referências sobre o uso do MkDocs e suas funcionalidades, consulte os links abaixo:
-
-- [Flavoured Markdown Tutorial](https://tutorial-mkdocs.systemhealthlab.com/flavoured_markdown.html)
-- [MkDocs Material Reference](https://squidfunk.github.io/mkdocs-material/reference/)
+Nosso objetivo principal é desenvolver um sistema de gestão integrado para uma transportadora, usando engenharia de dados para otimizar as operações logísticas. Isso inclui a coleta, armazenamento, transformação e análise de dados. Queremos melhorar a eficiência na atribuição de motoristas e veículos, planejamento de rotas, gestão de cargas e oferecer uma melhor experiência para os clientes, garantindo entregas pontuais e seguras.
 
 ## Pipeline de Engenharia de Dados
 
-A pipeline desenvolvida neste projeto abrange as seguintes etapas:
+A pipeline desenvolvida neste projeto inclui as seguintes etapas:
 
-1. **Coleta de Dados**: Utilização de APIs, web scraping, e outras fontes de dados.
-2. **Armazenamento de Dados**: Uso de Delta Lake para armazenamento eficiente e versionamento de dados.
-3. **Transformação de Dados**: Aplicação de transformações e limpeza de dados utilizando PySpark.
-4. **Análise de Dados**: Análise exploratória e visualização de dados com Jupyter Notebooks.
-5. **Automação e Orquestração**: Implementação de tarefas automatizadas e orquestração da pipeline.
+1. **Coleta de Dados**: Utilização de uma biblioteca de inserção de dados fictícios (Faker).
+2. **Armazenamento de Dados**: Utilização do Delta Lake para armazenar dados de forma escalável e confiável.
+3. **Transformação de Dados**: Processamento de grandes volumes de dados utilizando PySpark no Databricks.
+4. **Análise de Dados**: Utilização de notebooks interativos no Databricks para análise preditiva e otimização de rotas.
+5. **Automação e Orquestração**: Orquestração de workflows no Databricks para automatizar processos de ingestão, transformação e análise de dados.
 
 ## Tecnologias Utilizadas
 
-As principais tecnologias utilizadas no desenvolvimento deste projeto incluem:
+- **Python**: Linguagem de programação principal para desenvolvimento e scripts.
+- **PySpark**: Biblioteca para processamento de grandes volumes de dados de maneira distribuída.
+- **Delta Lake**: Camada de armazenamento que traz confiabilidade e desempenho para o armazenamento de dados.
+- **Databricks**: Plataforma de análise de dados para colaboração e processamento de big data em tempo real.
+- **Faker**: Biblioteca para geração de dados fictícios para testes e desenvolvimento.
+- **Azure Data Lake Storage**: Serviço de armazenamento escalável e seguro para grandes volumes de dados.
+- **Git**: Sistema de controle de versão para gerenciar e acompanhar mudanças no código-fonte.
+- **SQL**: Linguagem para manipulação e consulta de bancos de dados relacionais.
+- **Power BI**: Ferramenta de análise de negócios para criar relatórios e dashboards interativos.
 
-- **Python**
-- **PySpark**
-- **Delta Lake**
-- **Jupyter Notebooks**
-- **Git e GitHub**
-- **Markdown**
-- **MkDocs e Material Theme**
-
-## Conclusão
-
-Este projeto demonstra a aplicação prática dos conceitos de Engenharia de Dados, proporcionando uma base sólida para futuras implementações e projetos na área. A equipe agradece a oportunidade de aprender e desenvolver habilidades valiosas durante o curso.
+Estas tecnologias foram integradas para criar uma pipeline de dados eficiente, desde a coleta até a análise, garantindo uma gestão otimizada para a transportadora.
 
 ---
 
 <div style="text-align: center;">
-    <b>Copyright &copy; 2024 - <a href="#" target="_blank">Jorge Luiz da Silva</a> - Todos os direitos reservados.</b>
+    <b>Copyright &copy; 2024 - <a href="https://github.com/BrunoSupriano/SystemTransportDeltaLake/" target="_blank">SystemTransportDeltaLake</a> - Todos os direitos reservados.</b>
 </div>
