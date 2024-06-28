@@ -16,7 +16,7 @@ nav:
   - Como começar: initial_commands.md
   - Pipeline de Dados:
       - Oque é?: about_pipeline.md
-      - Arquitetura: pipeline.md
+      - Arquitetura: arq.md
       - Bronze: pipeline_bronze.md
       - Silver: pipeline_silver.md
       - Gold: pipeline_gold.md

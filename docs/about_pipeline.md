@@ -4,7 +4,7 @@ hide:
   #- toc # table of contents - menu da direita
 ---
 
-Um pipeline de dados é um conjunto de processos que extrai dados de várias fontes, transforma esses dados para um formato adequado e os carrega em um sistema de armazenamento, como um banco de dados ou um data warehouse. Os principais componentes de um pipeline de dados são:
+Uma pipeline de dados é um conjunto de processos que extrai dados de várias fontes, transforma esses dados para um formato adequado e os carrega em um sistema de armazenamento, como um banco de dados ou um data warehouse. Os principais componentes de um pipeline de dados são:
 
 1. **Extração (Extract):** Coleta dados de fontes diversas, como bancos de dados, APIs, arquivos CSV, logs, etc.
 2. **Transformação (Transform):** Converte os dados brutos em um formato mais adequado para análise. Isso pode incluir limpeza de dados, agregação, normalização, filtragem, enriquecimento, etc.

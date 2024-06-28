@@ -21,7 +21,6 @@ Coloqui uma imagem do seu projeto, como no exemplo abaixo:
 De que coisas você precisa para instalar o software e como instalá-lo?
 
 - **Python 3.8+** 
-- **Docker**: [Instalar Docker](https://docs.docker.com/get-docker/) 
 - **Git**: [Instalar Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Instalação
@@ -31,7 +30,7 @@ Uma série de exemplos passo-a-passo que informam o que você deve executar para
 ### Clonando o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/brunosupriano/SystemTransportDeltaLake.git
 ```
 
 ```bash
@@ -40,42 +39,24 @@ cd SystemTransportDeltaLake
 
 ### Configurando o Ambiente Virtual
 
+#### Com pip 
 ```bash
 python3 -m venv env
 source env\Scripts\activate # No linux use `source env/bin/activate` 
 pip install -r requirements.txt
-poetry install
+```
+#### Com poetry
+
+```bash
+poetry init
+poetry add mkdocs mkdocs-material mkdocs-material-extensions
+poetry shell
 ```
 
 ### Rodando o mkdocs
 
 ```bash
-poetry add mkdocs mkdocs-material mkdocs-material-extensions
-
 mkdocs serve
-```
-
-### Configurando o Docker
-
-```bash
-docker-compose up
-```
-
-```bash
-docker-compose run --rm nome_do_servico
-```
-
-### Executando o Projeto
-
-```bash
-python main.py
-```
-
-# Implantação
-
-```bash
-docker build -t nome-da-imagem .
-docker run -d -p 8000:8000 nome-da-imagem
 ```
 
 ---
@@ -85,10 +66,6 @@ docker run -d -p 8000:8000 nome-da-imagem
 #### [Faker](https://faker.readthedocs.io/)
 
 Biblioteca Python utilizada para gerar dados falsos realistas, como nomes, endereços, datas e mais. Essencial para criar a massa de dados necessária para o ambiente relacional.
-
-#### [Apache Airflow](https://airflow.apache.org/)
-
-Plataforma de orquestração de fluxos de trabalho que permite a criação, agendamento e monitoramento de workflows. Utilizada para gerenciar a ingestão e transformação de dados no projeto.
 
 #### [Docker](https://www.docker.com/)
 
