@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentacao do projeto <nome do projeto>">
+        <meta name="description" content="Documentacao do projeto SystemTransportDeltaLake">
       
       
         <meta name="author" content="Jorge Luiz da Silva">
       
       
-        <link rel="canonical" href="https://jlsilva01.github.io/projeto-ed-satc/">
+        <link rel="canonical" href="https://brunosupriano.github.io/SystemTransportDeltaLake/">
       
       
       
-        <link rel="next" href="sobre/">
+        <link rel="next" href="equipe/">
       
       
       <link rel="icon" href="images/favicon.png">
@@ -66,10 +66,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="yellow">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#projeto-sistema-de-transportadora-inteligente" class="md-skip">
+        <a href="#projeto-sistema-de-transportadora" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -96,7 +98,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="." title="Engenharia de Dados SATC" class="md-header__button md-logo" aria-label="Engenharia de Dados SATC" data-md-component="logo">
       
-  <img src="images/logo.png" alt="logo">
+  <img src="assets/logo-1.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -121,7 +123,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -164,13 +192,13 @@
     
     
       <div class="md-header__source">
-        <a href="http://github.com/jlsilva01/projeto-ed-satc" title="Ir ao repositório" class="md-source" data-md-component="source">
+        <a href="https://github.com/BrunoSupriano/SystemTransportDeltaLake" title="Ir ao repositório" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
-    projeto-ed-satc
+    SystemTransportDeltaLake
   </div>
 </a>
       </div>
@@ -207,12 +235,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="sobre/" class="md-tabs__link">
+      <a href="equipe/" class="md-tabs__link">
         
   
     
   
-  Sobre
+  Equipe
 
       </a>
     </li>
@@ -223,16 +251,17 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="pipeline/" class="md-tabs__link">
-        
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="about_pipeline/" class="md-tabs__link">
+          
   
   Pipeline de Dados
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -268,20 +297,20 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="Engenharia de Dados SATC" class="md-nav__button md-logo" aria-label="Engenharia de Dados SATC" data-md-component="logo">
       
-  <img src="images/logo.png" alt="logo">
+  <img src="assets/logo-1.jpg" alt="logo">
 
     </a>
     Engenharia de Dados SATC
   </label>
   
     <div class="md-nav__source">
-      <a href="http://github.com/jlsilva01/projeto-ed-satc" title="Ir ao repositório" class="md-source" data-md-component="source">
+      <a href="https://github.com/BrunoSupriano/SystemTransportDeltaLake" title="Ir ao repositório" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
-    projeto-ed-satc
+    SystemTransportDeltaLake
   </div>
 </a>
     </div>
@@ -359,15 +388,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#equipe" class="md-nav__link">
-    <span class="md-ellipsis">
-      Equipe
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pipeline-de-engenharia-de-dados" class="md-nav__link">
     <span class="md-ellipsis">
       Pipeline de Engenharia de Dados
@@ -409,11 +429,11 @@
   
   
     <li class="md-nav__item">
-      <a href="sobre/" class="md-nav__link">
+      <a href="equipe/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Sobre
+    Equipe
   </span>
   
 
@@ -428,16 +448,148 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="pipeline/" class="md-nav__link">
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Pipeline de Dados
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Pipeline de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about_pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oque é?
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitetura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pipeline_bronze/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bronze
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pipeline_silver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Silver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pipeline_gold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -489,15 +641,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#equipe" class="md-nav__link">
-    <span class="md-ellipsis">
-      Equipe
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pipeline-de-engenharia-de-dados" class="md-nav__link">
     <span class="md-ellipsis">
       Pipeline de Engenharia de Dados
@@ -542,24 +685,11 @@
   
 
 
-<h1 id="projeto-sistema-de-transportadora-inteligente">Projeto Sistema de Transportadora Inteligente</h1>
-<p><img alt="Logo" src="images/logo.png" /></p>
+<h1 id="projeto-sistema-de-transportadora">Projeto Sistema de Transportadora</h1>
 <h2 id="introducao">Introdução</h2>
-<p>Este projeto foi desenvolvido para implementar um sistema de gestão inteligente para uma transportadora, utilizando técnicas avançadas de Engenharia de Dados para otimizar operações logísticas e melhorar a eficiência de entregas, processos e de gerenciamento interno. A equipe aplicou ferramentas modernas e tecnologias como Python, PySpark, Delta Lake, e Databricks para construir uma robusta pipeline de dados.</p>
+<p>Este projeto foi desenvolvido para criar um sistema de gestão inteligente para uma transportadora. Utilizando técnicas avançadas de Engenharia de Dados, buscamos otimizar operações logísticas, melhorar a eficiência das entregas e gerenciar processos internos de maneira mais eficaz. </p>
 <h2 id="objetivo">Objetivo</h2>
-<p>O objetivo principal deste projeto é desenvolver um sistema de gestão integrada para uma transportadora, utilizando engenharia de dados para otimizar operações logísticas. Isso inclui a coleta, armazenamento, transformação e análise de dados. A equipe buscará melhorar a eficiência na atribuição de motoristas e veículos, planejamento de rotas otimizado, gestão eficaz de cargas e melhor experiência para os clientes, garantindo entregas pontuais e seguras.</p>
-<h2 id="equipe">Equipe</h2>
-<p>A equipe responsável pelo desenvolvimento deste projeto inclui:</p>
-<ul>
-<li><strong>Henrique Forgiarini</strong> - <em>Coleta e integração de dados de rastreamento</em> - <a href="https://github.com/HenriqueSilva29">Perfil GitHub</a></li>
-<li><strong>Bruno Supriano</strong> - <em>Armazenamento e gerenciamento de dados no Delta Lake</em> - <a href="https://github.com/BrunoSupriano">Perfil GitHub</a></li>
-<li><strong>Renato Ribas</strong> - <em>Configuração e otimização do ambiente no Databricks</em> - <a href="https://github.com/RenatoRibas">Perfil GitHub</a></li>
-<li><strong>Tiago Salles</strong> - <em>Desenvolvimento de modelos preditivos para gestão de frota</em> - <a href="https://github.com/TiagoS4">Perfil GitHub</a></li>
-<li><strong>João Pedro Cardoso</strong> - <em>Análise de dados utilizando PySpark</em> - <a href="https://github.com/jpdarabas">Perfil GitHub</a></li>
-<li><strong>Diego Hahn</strong> - <em>Orquestração de workflows no Databricks</em> - <a href="https://github.com/DiegoHahn">Perfil GitHub</a></li>
-<li><strong>Jhayne Henemam</strong> - <em>Desenvolvimento de dashboards para visualização de dados</em> - <a href="https://github.com/JhayneK">Perfil GitHub</a></li>
-<li><strong>Keniel Alves</strong> - <em>Gerenciamento de versionamento e documentação</em> - <a href="https://github.com/KenielDev">Perfil GitHub</a></li>
-</ul>
+<p>Nosso objetivo principal é desenvolver um sistema de gestão integrado para uma transportadora, usando engenharia de dados para otimizar as operações logísticas. Isso inclui a coleta, armazenamento, transformação e análise de dados. Queremos melhorar a eficiência na atribuição de motoristas e veículos, planejamento de rotas, gestão de cargas e oferecer uma melhor experiência para os clientes, garantindo entregas pontuais e seguras.</p>
 <h2 id="pipeline-de-engenharia-de-dados">Pipeline de Engenharia de Dados</h2>
 <p>A pipeline desenvolvida neste projeto inclui as seguintes etapas:</p>
 <ol>
@@ -570,12 +700,24 @@
 <li><strong>Automação e Orquestração</strong>: Orquestração de workflows no Databricks para automatizar processos de ingestão, transformação e análise de dados.</li>
 </ol>
 <h2 id="tecnologias-utilizadas">Tecnologias Utilizadas</h2>
-<p>Além das tecnologias mencionadas, este projeto também fez uso extensivo das capacidades do Databricks para processamento de big data em tempo real e colaboração em equipe.</p>
+<ul>
+<li><strong>Python</strong>: Linguagem de programação principal para desenvolvimento e scripts.</li>
+<li><strong>PySpark</strong>: Biblioteca para processamento de grandes volumes de dados de maneira distribuída.</li>
+<li><strong>Delta Lake</strong>: Camada de armazenamento que traz confiabilidade e desempenho para o armazenamento de dados.</li>
+<li><strong>Databricks</strong>: Plataforma de análise de dados para colaboração e processamento de big data em tempo real.</li>
+<li><strong>Faker</strong>: Biblioteca para geração de dados fictícios para testes e desenvolvimento.</li>
+<li><strong>Azure Data Lake Storage</strong>: Serviço de armazenamento escalável e seguro para grandes volumes de dados.</li>
+<li><strong>Git</strong>: Sistema de controle de versão para gerenciar e acompanhar mudanças no código-fonte.</li>
+<li><strong>Docker</strong>: Plataforma para criação e gerenciamento de containers, garantindo ambientes consistentes para desenvolvimento e produção.</li>
+<li><strong>SQL</strong>: Linguagem para manipulação e consulta de bancos de dados relacionais.</li>
+<li><strong>Power BI</strong>: Ferramenta de análise de negócios para criar relatórios e dashboards interativos.</li>
+</ul>
+<p>Estas tecnologias foram integradas para criar uma pipeline de dados eficiente, desde a coleta até a análise, garantindo uma gestão otimizada para a transportadora.</p>
 <h2 id="conclusao">Conclusão</h2>
-<p>Este projeto não apenas demonstra a aplicação prática dos conceitos de Engenharia de Dados, mas também oferece uma solução inovadora para melhorar a eficiência e a competitividade de uma transportadora. A equipe está entusiasmada em contribuir para um projeto que pode transformar positivamente a logística de transporte de cargas.</p>
+<p>Este projeto demonstra a aplicação prática dos conceitos de Engenharia de Dados e oferece uma solução para melhorar a eficiência e competitividade de uma transportadora.</p>
 <hr />
 <div style="text-align: center;">
-    <b>Copyright &copy; 2024 - <a href="#" target="_blank">Jorge Luiz da Silva</a> - Todos os direitos reservados.</b>
+    <b>Copyright &copy; 2024 - <a href="https://github.com/BrunoSupriano/SystemTransportDeltaLake/" target="_blank">SystemTransportDeltaLake</a> - Todos os direitos reservados.</b>
 </div>
 
 
@@ -620,13 +762,13 @@
         
         
           
-          <a href="sobre/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Sobre">
+          <a href="equipe/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Equipe">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Sobre
+                Equipe
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -643,7 +785,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 - <a href="#" target="_blank"><b>Jorge Luiz da Silva</b></a> - Todos os direitos reservados.
+      Copyright &copy; 2024 - <a href="#" target="_blank"><b>SystemTransportDeltaLake</b></a> - Todos os direitos reservados.
     </div>
   
   
@@ -676,7 +818,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "navigation.next-prev", "search"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "navigation.expand", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "navigation.next-prev", "search"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
       <script src="assets/javascripts/bundle.ad660dcc.min.js"></script>

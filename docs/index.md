@@ -4,31 +4,15 @@ hide:
   #- toc # table of contents - menu da direita
 ---
 
-# Projeto Sistema de Transportadora Inteligente
-
-![Logo](images/logo.png)
+# Projeto Sistema de Transportadora
 
 ## Introdução
 
-Este projeto foi desenvolvido para implementar um sistema de gestão inteligente para uma transportadora, utilizando técnicas avançadas de Engenharia de Dados para otimizar operações logísticas e melhorar a eficiência de entregas, processos e de gerenciamento interno. A equipe aplicou ferramentas modernas e tecnologias como Python, PySpark, Delta Lake, e Databricks para construir uma robusta pipeline de dados.
+Este projeto foi desenvolvido para criar um sistema de gestão inteligente para uma transportadora. Utilizando técnicas avançadas de Engenharia de Dados, buscamos otimizar operações logísticas, melhorar a eficiência das entregas e gerenciar processos internos de maneira mais eficaz. 
 
 ## Objetivo
 
-O objetivo principal deste projeto é desenvolver um sistema de gestão integrada para uma transportadora, utilizando engenharia de dados para otimizar operações logísticas. Isso inclui a coleta, armazenamento, transformação e análise de dados. A equipe buscará melhorar a eficiência na atribuição de motoristas e veículos, planejamento de rotas otimizado, gestão eficaz de cargas e melhor experiência para os clientes, garantindo entregas pontuais e seguras.
-
-
-## Equipe
-
-A equipe responsável pelo desenvolvimento deste projeto inclui:
-
-- **Henrique Forgiarini** - *Coleta e integração de dados de rastreamento* - [Perfil GitHub](https://github.com/HenriqueSilva29)
-- **Bruno Supriano** - *Armazenamento e gerenciamento de dados no Delta Lake* - [Perfil GitHub](https://github.com/BrunoSupriano)
-- **Renato Ribas** - *Configuração e otimização do ambiente no Databricks* - [Perfil GitHub](https://github.com/RenatoRibas)
-- **Tiago Salles** - *Desenvolvimento de modelos preditivos para gestão de frota* - [Perfil GitHub](https://github.com/TiagoS4)
-- **João Pedro Cardoso** - *Análise de dados utilizando PySpark* - [Perfil GitHub](https://github.com/jpdarabas)
-- **Diego Hahn** - *Orquestração de workflows no Databricks* - [Perfil GitHub](https://github.com/DiegoHahn)
-- **Jhayne Henemam** - *Desenvolvimento de dashboards para visualização de dados* - [Perfil GitHub](https://github.com/JhayneK)
-- **Keniel Alves** - *Gerenciamento de versionamento e documentação* - [Perfil GitHub](https://github.com/KenielDev)
+Nosso objetivo principal é desenvolver um sistema de gestão integrado para uma transportadora, usando engenharia de dados para otimizar as operações logísticas. Isso inclui a coleta, armazenamento, transformação e análise de dados. Queremos melhorar a eficiência na atribuição de motoristas e veículos, planejamento de rotas, gestão de cargas e oferecer uma melhor experiência para os clientes, garantindo entregas pontuais e seguras.
 
 ## Pipeline de Engenharia de Dados
 
@@ -42,16 +26,28 @@ A pipeline desenvolvida neste projeto inclui as seguintes etapas:
 
 ## Tecnologias Utilizadas
 
-Além das tecnologias mencionadas, este projeto também fez uso extensivo das capacidades do Databricks para processamento de big data em tempo real e colaboração em equipe.
+- **Python**: Linguagem de programação principal para desenvolvimento e scripts.
+- **PySpark**: Biblioteca para processamento de grandes volumes de dados de maneira distribuída.
+- **Delta Lake**: Camada de armazenamento que traz confiabilidade e desempenho para o armazenamento de dados.
+- **Databricks**: Plataforma de análise de dados para colaboração e processamento de big data em tempo real.
+- **Faker**: Biblioteca para geração de dados fictícios para testes e desenvolvimento.
+- **Azure Data Lake Storage**: Serviço de armazenamento escalável e seguro para grandes volumes de dados.
+- **Git**: Sistema de controle de versão para gerenciar e acompanhar mudanças no código-fonte.
+- **Docker**: Plataforma para criação e gerenciamento de containers, garantindo ambientes consistentes para desenvolvimento e produção.
+- **SQL**: Linguagem para manipulação e consulta de bancos de dados relacionais.
+- **Power BI**: Ferramenta de análise de negócios para criar relatórios e dashboards interativos.
+
+Estas tecnologias foram integradas para criar uma pipeline de dados eficiente, desde a coleta até a análise, garantindo uma gestão otimizada para a transportadora.
+
 
 ## Conclusão
 
-Este projeto não apenas demonstra a aplicação prática dos conceitos de Engenharia de Dados, mas também oferece uma solução inovadora para melhorar a eficiência e a competitividade de uma transportadora. A equipe está entusiasmada em contribuir para um projeto que pode transformar positivamente a logística de transporte de cargas.
+Este projeto demonstra a aplicação prática dos conceitos de Engenharia de Dados e oferece uma solução para melhorar a eficiência e competitividade de uma transportadora.
 
 
 
 ---
 
 <div style="text-align: center;">
-    <b>Copyright &copy; 2024 - <a href="#" target="_blank">Jorge Luiz da Silva</a> - Todos os direitos reservados.</b>
+    <b>Copyright &copy; 2024 - <a href="https://github.com/BrunoSupriano/SystemTransportDeltaLake/" target="_blank">SystemTransportDeltaLake</a> - Todos os direitos reservados.</b>
 </div>
