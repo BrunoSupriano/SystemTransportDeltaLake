@@ -6,10 +6,10 @@ hide:
 
 A equipe responsável pelo desenvolvimento deste projeto inclui:
 
-- **Henrique Forgiarini** - *Coleta e integração de dados de rastreamento* - [Perfil GitHub](https://github.com/HenriqueSilva29)
+- **Henrique Forgiarini** - *Arquitetura* - [Perfil GitHub](https://github.com/HenriqueSilva29)
 - **Bruno Supriano** - *Armazenamento e gerenciamento de dados no Delta Lake* - [Perfil GitHub](https://github.com/BrunoSupriano)
 - **Renato Ribas** - *Configuração e otimização do ambiente no Databricks* - [Perfil GitHub](https://github.com/RenatoRibas)
-- **Tiago Salles** - *Desenvolvimento de modelos preditivos para gestão de frota* - [Perfil GitHub](https://github.com/TiagoS4)
+- **Tiago Salles** - *Documentação* - [Perfil GitHub](https://github.com/TiagoS4)
 - **João Pedro Cardoso** - *Análise de dados utilizando PySpark* - [Perfil GitHub](https://github.com/jpdarabas)
 - **Diego Hahn** - *Orquestração de workflows no Databricks* - [Perfil GitHub](https://github.com/DiegoHahn)
 - **Jhayne Henemam** - *Desenvolvimento de dashboards para visualização de dados* - [Perfil GitHub](https://github.com/JhayneK)

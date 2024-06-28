@@ -67,9 +67,9 @@ WHEN NOT MATCHED THEN
   );
 ```
 
-## Cargas
+### Cargas
 
-### Cria Tabela
+#### Cria Tabela
 
 ```sql
 %sql
@@ -88,13 +88,13 @@ USING delta
 LOCATION  '/mnt/datalake7a68c04c876ba15d/gold/dim_cargas';
 ```
 
-### Cria uma tabela temporária 
+#### Cria uma tabela temporária 
 
 ```python
 df_cargas.createOrReplaceTempView("temp_cargas")
 ```
 
-### Da merge nos dados da tabela dimensional e temporária
+#### Da merge nos dados da tabela dimensional e temporária
 
 ```sql 
 %sql
@@ -114,9 +114,9 @@ WHEN NOT MATCHED THEN
   VALUES (temp.codigo_carga, temp.tipo_carga, temp.peso_carga, temp.comprimento, temp.largura, temp.altura, temp.data_entrega_prevista);
 ```
 
-## Veículos
+### Veículos
 
-### Cria Tabela
+#### Cria Tabela
 
 ```sql
 %sql
@@ -132,13 +132,13 @@ CREATE TABLE IF NOT EXISTS dim_veiculos (
 USING delta
 LOCATION  '/mnt/datalake7a68c04c876ba15d/gold/dim_veiculos';
 ```
-### Cria Tabela Temporária
+#### Cria Tabela Temporária
 
 ```python
 df_veiculos.createOrReplaceTempView("temp_veiculos")
 ```
 
-### Da merge nos dados da tabela dimensional e temporária
+#### Da merge nos dados da tabela dimensional e temporária
 
 ```sql
 %sql
@@ -157,9 +157,9 @@ WHEN NOT MATCHED THEN
   VALUES (temp.codigo_veiculo,temp.tipo_veiculo, temp.data_aquisicao, temp.estado_veiculo, temp.placa_veiculo);
 ```
 
-## Motoristas
+### Motoristas
 
-### Criando Tabela
+#### Criando Tabela
 
 ```sql
 %sql
@@ -178,13 +178,13 @@ USING delta
 LOCATION  '/mnt/datalake7a68c04c876ba15d/gold/dim_motoristas';
 ```
 
-### Criando Tabela Temporária de motoristas
+#### Criando Tabela Temporária de motoristas
 
 ```python
 df_motoristas.createOrReplaceTempView("temp_motoristas")
 ```
 
-### Da merge nos dados da tabela dimensional e temporária
+#### Da merge nos dados da tabela dimensional e temporária
 
 ```sql
 %sql
@@ -205,9 +205,9 @@ WHEN NOT MATCHED THEN
   VALUES (temp.codigo_motorista,temp.nome, temp.telefone, temp.numero_carteira, temp.data_contratacao, temp.categoria_carteira, temp.status);
 ```
 
-## Rotas
+### Rotas
 
-### Criando Tabela
+#### Criando Tabela
 
 ```sql
 %sql
@@ -224,13 +224,13 @@ LOCATION  '/mnt/datalake7a68c04c876ba15d/gold/dim_rotas';
 
 ```
 
-### Criando Tabela Temporária de rotas
+#### Criando Tabela Temporária de rotas
 
 ```python
 df_rotas.createOrReplaceTempView("temp_rotas")
 ```
 
-### Da merge nos dados da tabela dimensional e temporária
+#### Da merge nos dados da tabela dimensional e temporária
 
 ```python
 %sql
@@ -248,9 +248,9 @@ WHEN NOT MATCHED THEN
   VALUES (temp.codigo_rota,temp.origem, temp.destino, temp.tempo_estimado);
 ```
 
-## Clientes
+### Clientes
 
-### Criando Tabela
+#### Criando Tabela
 
 ```sql
 %sql
@@ -272,13 +272,13 @@ USING delta
 LOCATION  '/mnt/datalake7a68c04c876ba15d/gold/dim_clientes';
 ```
 
-### Criando tabela temporária de clientes
+#### Criando tabela temporária de clientes
 
 ```python
 df_clientes.createOrReplaceTempView("temp_clientes")
 ```
 
-### Da merge nos dados da tabela dimensional e temporária
+#### Da merge nos dados da tabela dimensional e temporária
 
 ```python
 %sql
@@ -302,9 +302,9 @@ WHEN NOT MATCHED THEN
   VALUES (temp.codigo_cliente,temp.nome_cliente, temp.contato_cliente, temp.tipo_cliente, temp.logradouro_cliente, temp.numero_residencia_cliente, temp.bairro_cliente, temp.cep_cliente, temp.cidade_cliente, temp.uf_cliente);
 ```
 
-## Tempo
+### Tempo
 
-### Criando Tabela
+#### Criando Tabela
 
 ```python
 from pyspark.sql.functions import min, max, row_number
@@ -357,9 +357,9 @@ df_tempo.write.mode("overwrite") \
     .option("path", f"/mnt/{storageAccountName}/gold/dim_tempo") \
     .saveAsTable("dim_tempo", format="delta")
 ```
-## Tabela Fato (Entregas)
+### Tabela Fato (Entregas)
 
-### Criando Tabela
+#### Criando Tabela
 
 ```sql
 %sql
@@ -381,7 +381,7 @@ USING delta
 LOCATION '/mnt/datalake7a68c04c876ba15d/gold/fato_entregas';
 ```
 
-### Adicionando tempo_entrega e alterando data_hora para somente data
+#### Adicionando tempo_entrega e alterando data_hora para somente data
 
 ```python
 from pyspark.sql.types import TimestampType
@@ -412,7 +412,7 @@ df_agendamentos_fato = df_agendamentos_fato.drop("entrega_segundos", "diferenca_
 df_agendamentos_fato.display()
 ```
 
-### Adicionando codigo_motorista ao DataFrame agendamentos
+#### Adicionando codigo_motorista ao DataFrame agendamentos
 
 ```python
 df_agendamentos_fato = df_agendamentos_fato.join(
@@ -422,7 +422,7 @@ df_agendamentos_fato = df_agendamentos_fato.join(
 )
 ```
 
-### Populando a tabela fato
+#### Populando a tabela fato
 
 ```python
 df_agendamentos_fato.createOrReplaceTempView("temp_agendamentos_fato")

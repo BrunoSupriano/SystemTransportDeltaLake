@@ -33,18 +33,10 @@ A pipeline desenvolvida neste projeto inclui as seguintes etapas:
 - **Faker**: Biblioteca para geração de dados fictícios para testes e desenvolvimento.
 - **Azure Data Lake Storage**: Serviço de armazenamento escalável e seguro para grandes volumes de dados.
 - **Git**: Sistema de controle de versão para gerenciar e acompanhar mudanças no código-fonte.
-- **Docker**: Plataforma para criação e gerenciamento de containers, garantindo ambientes consistentes para desenvolvimento e produção.
 - **SQL**: Linguagem para manipulação e consulta de bancos de dados relacionais.
 - **Power BI**: Ferramenta de análise de negócios para criar relatórios e dashboards interativos.
 
 Estas tecnologias foram integradas para criar uma pipeline de dados eficiente, desde a coleta até a análise, garantindo uma gestão otimizada para a transportadora.
-
-
-## Conclusão
-
-Este projeto demonstra a aplicação prática dos conceitos de Engenharia de Dados e oferece uma solução para melhorar a eficiência e competitividade de uma transportadora.
-
-
 
 ---
 

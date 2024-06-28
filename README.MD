@@ -44,7 +44,6 @@ cd SystemTransportDeltaLake
 python3 -m venv env
 source env\Scripts\activate # No linux use `source env/bin/activate` 
 pip install -r requirements.txt
-//// ou se usar poetry
 poetry install
 ```
 
@@ -119,7 +118,7 @@ Gerador de sites estáticos que converte arquivos markdown em uma documentação
 
 ## Colaboração
 
-Por favor, leia o [COLABORACAO](https://gist.github.com/usuario/colaboracao.md) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
+<!-- Por favor, leia o [COLABORACAO](https://gist.github.com/usuario/colaboracao.md) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação. -->
 
 Se desejar publicar suas modificações em um repositório remoto no GitHub, siga estes passos:
 
